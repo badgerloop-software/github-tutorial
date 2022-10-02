@@ -5,7 +5,7 @@ This tutorial is to provide instructions on the installation and setup of WSL an
 
 This Tutorial is based on the one from [hubspot](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
 
-# WSL Installation Instructions (Firmware Start Here)
+# WSL and Ubuntu Installation and Setup (Firmware Start Here)
 This portion of the tutorial is to guide new Firmware members in the installation of WSL. Requirements for this tutorial are that you are using your **personal laptop** that runs **Windows 10, Windows 11, or Linux**. Windows users, please complete WSL installation before continuing with the GitHub tutorial. If you use Linux, then you can skip ahead to the GitHub portion.
 
 ## Step 0: Install Windows Terminal
@@ -16,6 +16,9 @@ After it installs, open Windows terminal as an administrator by right clicking o
 
 ## Step 1: Install WSL
 
+Once running PowerShell as an admin, type ```wsl --install``` in the terminal and hit enter. If all goes to plan, WSL will begin installing Ubuntu, and the terminal window will begin outputing its progress. Once the installation finishes, the terminal will tell you that a restart is requeired. Restart your computer now, then return to the tutorial.
+
+Once you're back, open Terminal as an admin again, open PowerShell and run the following command: ```wsl --set-default-version 2```. This sets your WSL to the correct version for our use.
 
 [Install link](https://learn.microsoft.com/en-us/windows/wsl/install)
 
@@ -24,6 +27,9 @@ After it installs, open Windows terminal as an administrator by right clicking o
 ## Step 0: Install Git
 
 ### Ubuntu (Firmware)
+
+Open Ubuntu in Windows Terminal by clicking the dropdown arrow to the right of the plus button, then click on Ubuntu. Once in the linux terminal, run the following command to ensure git is installed.
+
 ```
 sudo apt install git
 ```
@@ -31,6 +37,10 @@ sudo apt install git
 ### Windows (Software)
 
 Download git [here](https://git-scm.com/downloads). Follow the walkthrough, all default options should be good. Don't touch them unless you know what you're doing.
+
+## Step 0 (continued): Set up GitHub SSH Key
+
+
 
 ## Step 1: Clone the Repository
 No matter what project you're working on in Badgerloop, you will always be working in a repository (Repo for short). To use git we'll be using the terminal. Check out some tutorials on the wiki. In this guide you will need to know the following.
