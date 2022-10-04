@@ -16,11 +16,19 @@ After it installs, open Windows terminal as an administrator by right clicking o
 
 ## Step 1: Install WSL
 
-Once running PowerShell as an admin, type ```wsl --install``` in the terminal and hit enter. If all goes to plan, WSL will begin installing Ubuntu, and the terminal window will begin outputing its progress. Once the installation finishes, the terminal will tell you that a restart is requeired. Restart your computer now, then return to the tutorial.
+Once running PowerShell as an admin, type ```wsl --install``` in the terminal and hit enter. If all goes to plan, WSL will begin installing Ubuntu, and the terminal window will begin outputing its progress. Once the installation finishes, the terminal will tell you that a restart is required. Restart your computer now, then return to the tutorial.
 
 Once you're back, open Terminal as an admin again, open PowerShell and run the following command: ```wsl --set-default-version 2```. This sets your WSL to the correct version for our use.
 
 [Install link](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+## Step 2: Ubuntu Setup
+
+After the restart, an Ubuntu window should open automatically and display the progress of the last of the Ubuntu installation. If it didn't open, use the Start menu or the Windows search bar to search for Ubuntu. It will appear as a Windows application, so open it up like you would any other app. After the installation finishes, you will be asked to enter in a username and password for your distribution. You can choose whatever you'd like for these, but an important thing to note is that you will not be able to see your password as you type. This is a security feature called blind typing, and is completely normaL.
+
+As you likely noticed, the Ubuntu window did not open in Windows Terminal. Once you've set your login, close out the window and pull up Windows Terminal. To get to Ubuntu in Terminal, click the dropdown arrow to the right of the plus button, then click on Ubuntu.
+
+Now in the Ubuntu terminal, type ```cd ~``` to ensure you're in your root directory. Next, run ```sudo apt update && sudo apt upgrade``` to ensure all of your packages are up to date. 
 
 # GitHub Tutorial (Software Start Here)
 
