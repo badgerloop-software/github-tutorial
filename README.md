@@ -1,28 +1,54 @@
-# GitHub-Tutorial-Template
-*Author: [Eric Udlis](http://ericudlis.com), Ben Everson*
+# GitHub-WSL-Tutorial
+*Authors: [Eric Udlis](http://ericudlis.com), Ben Everson, Noah Kurszewski*
+
+This tutorial is to provide instructions on the installation and setup of WSL and GitHub and to introduce version control using GitHub.
 
 This Tutorial is based on the one from [hubspot](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
 
-This is a template Repo to teach the basics of contributing to a repository in Badgerloop
+# WSL and Ubuntu Installation and Setup (Firmware Start Here)
+This portion of the tutorial is to guide new Firmware members in the installation of WSL. Requirements for this tutorial are that you are using your **personal laptop** that runs **Windows 10, Windows 11, or Linux**. Windows users, please complete WSL installation before continuing with the GitHub tutorial. If you use Linux, then you can skip ahead to the GitHub portion.
 
-# How to Use This Guide
+## Step 0: Install Windows Terminal
+I have found that Windows Terminal works best for WSL, as it combines PowerShell and your WSL distribution into one terminal. If your laptop doesn't already have it installed, you can download it [here](https://www.microsoft.com/store/productId/9N0DX20HK701).
 
-Click the "Use this template" button in the top row to copy this readme over to a new repository. Follow the instructions below and enjoy!
+### Open Windows Terminal
+After it installs, open Windows terminal as an administrator by right clicking on the Terminal icon, then clicking "Run as adminstrator." Your terminal will likely initially open to Command Prompt or PowerShell. If it doesn't open to PowerShell, click the dropdown arrow to the right of the plus button and select Windows PowerShell.
 
-**If the top left of your repository screen says badgerloop-software/github-tutorial-template you have not properly created a template. Do not make any pull requests to this repository**
+## Step 1: Install WSL
 
-# Instructions (Start Here)
+Once running PowerShell as an admin, type ```wsl --install``` in the terminal and hit enter. If all goes to plan, WSL will begin installing Ubuntu, and the terminal window will begin outputing its progress. Once the installation finishes, the terminal will tell you that a restart is required. Restart your computer now, then return to the tutorial.
+
+Once you're back, open Terminal as an admin again, open PowerShell and run the following command: ```wsl --set-default-version 2```. This sets your WSL to the correct version for our use.
+
+[Install link](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+## Step 2: Ubuntu Setup
+
+After the restart, an Ubuntu window should open automatically and display the progress of the last of the Ubuntu installation. If it didn't open, use the Start menu or the Windows search bar to search for Ubuntu. It will appear as a Windows application, so open it up like you would any other app. After the installation finishes, you will be asked to enter in a username and password for your distribution. You can choose whatever you'd like for these, but an important thing to note is that you will not be able to see your password as you type. This is a security feature called blind typing, and is completely normaL.
+
+As you likely noticed, the Ubuntu window did not open in Windows Terminal. Once you've set your login, close out the window and pull up Windows Terminal. To get to Ubuntu in Terminal, click the dropdown arrow to the right of the plus button, then click on Ubuntu.
+
+Now in the Ubuntu terminal, type ```cd ~``` to ensure you're in your root directory. Next, run ```sudo apt update && sudo apt upgrade``` to ensure all of your packages are up to date. 
+
+# GitHub Tutorial (Software Start Here)
 
 ## Step 0: Install Git
 
-### Ubuntu
+### Ubuntu (Firmware)
+
+Open Ubuntu in Windows Terminal by clicking the dropdown arrow to the right of the plus button, then click on Ubuntu. Once in the linux terminal, run the following command to ensure git is installed.
+
 ```
 sudo apt install git
 ```
 
-### Windows
+### Windows (Software)
 
 Download git [here](https://git-scm.com/downloads). Follow the walkthrough, all default options should be good. Don't touch them unless you know what you're doing.
+
+## Step 0 (continued): Set up GitHub SSH Key
+
+
 
 ## Step 1: Clone the Repository
 No matter what project you're working on in Badgerloop, you will always be working in a repository (Repo for short). To use git we'll be using the terminal. Check out some tutorials on the wiki. In this guide you will need to know the following.
@@ -35,7 +61,7 @@ We already have code up on GitHub so the first step is to "clone" a copy of what
 ```
 Bucky@Badgerloop~$: cd ~ 
 ```
-Next grab the clone link from the GitHub Page. You will need to navigate to the actual webpage of the git repository on GitHub. You can find a list of all Badgerloop Repos by [clicking here](https://github.com/badgerloop-software/). If you're reading this on the GitHub page, just click the green button in the upper right that says "Clone or Download". Copy that link to your clipboard, we'll need it in the next step.
+Next grab the clone link from the GitHub Page. You will need to navigate to the actual webpage of the git repository on GitHub. You can find a list of all Badgerloop Repos by [clicking here](https://github.com/badgerloop-software/). If you're reading this on the GitHub page, just click the green button in the upper right that says "Code." This opens a dropdown window. In that window, click "SSH" if it isn't already selected, then copy the link to your clipboard. We'll need it in the next step.
 
 Finally, execute a git clone command to copy the repository to your local machine by typing
 ```
