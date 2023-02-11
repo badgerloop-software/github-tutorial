@@ -48,7 +48,9 @@ Download git [here](https://git-scm.com/downloads). Follow the walkthrough, all 
 
 ## Step 0 (continued): Set up GitHub SSH Key
 
-
+ 1. [Generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+   - You only need to follow the “Generating a new SSH key” section. It isn’t necessary to add your SSH key to the ssh-agent.
+ 2. [Adding the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 
 
 ## Step 1: Clone the Repository
 No matter what project you're working on in Badgerloop, you will always be working in a repository (Repo for short). To use git we'll be using the terminal. Check out some tutorials on the wiki. In this guide you will need to know the following.
@@ -146,7 +148,7 @@ Bucky@Badgerloop~$: git commit -m "Added Eric.txt to mark my contribution"
  create mode 100644 Eric.txt
  ```
 
- ## Steep 5.5: A Better Way
+ ## Step 5.5: A Better Way
 
  When working with several files, it gets tedious to list every single file for one commit. An easier way to commit several files is to run the `git commit` command with the `-am` flag. As we learned eariler `-m` means you're adding a message to your commit. The `-a` flag means you want to commit all changed files. 
  ```
