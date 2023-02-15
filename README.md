@@ -1,11 +1,11 @@
 # GitHub-WSL-Tutorial
-*Authors: [Eric Udlis](http://ericudlis.com), Ben Everson, Noah Kurszewski*
+*Authors: [Eric Udlis](http://ericudlis.com), Ben Everson, Noah Kurszewski, [James Vollmer](https://jrvollmer.github.io)*
 
 This tutorial is to provide instructions on the installation and setup of WSL and GitHub and to introduce version control using GitHub.
 
 This Tutorial is based on the one from [hubspot](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
 
-# WSL and Ubuntu Installation and Setup (Firmware Start Here)
+# WSL and Ubuntu Installation and Setup (Fellow Windows People Start Here)
 This portion of the tutorial is to guide new Firmware members in the installation of WSL. Requirements for this tutorial are that you are using your **personal laptop** that runs **Windows 10, Windows 11, or Linux**. Windows users, please complete WSL installation before continuing with the GitHub tutorial. If you use Linux, then you can skip ahead to the GitHub portion.
 
 ## Step 0: Install Windows Terminal
@@ -30,11 +30,11 @@ As you likely noticed, the Ubuntu window did not open in Windows Terminal. Once 
 
 Now in the Ubuntu terminal, type ```cd ~``` to ensure you're in your root directory. Next, run ```sudo apt update && sudo apt upgrade``` to ensure all of your packages are up to date. 
 
-# GitHub Tutorial (Software Start Here)
+# GitHub Tutorial
 
 ## Step 0: Install Git
 
-### Ubuntu (Firmware)
+### Ubuntu
 
 Open Ubuntu in Windows Terminal by clicking the dropdown arrow to the right of the plus button, then click on Ubuntu. Once in the linux terminal, run the following command to ensure git is installed.
 
@@ -42,15 +42,26 @@ Open Ubuntu in Windows Terminal by clicking the dropdown arrow to the right of t
 sudo apt install git
 ```
 
-### Windows (Software)
+### Windows
 
 Download git [here](https://git-scm.com/downloads). Follow the walkthrough, all default options should be good. Don't touch them unless you know what you're doing.
 
-## Step 0 (continued): Set up GitHub SSH Key
+## Step 0 (Continued): Set up GitHub SSH Key
 
- 1. [Generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-   - You only need to follow the “Generating a new SSH key” section. It isn’t necessary to add your SSH key to the ssh-agent.
- 2. [Adding the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 
+ 1. Follow the instructions in the “Generating a new SSH key” section of [Generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). It isn’t necessary to add your SSH key to the ssh-agent.
+ 2. Follow the instructions on [Adding the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+    - When you copy your SSH key to GitHub, it should have your email at the end of it.
+
+## Step 0 (Almost There): Configure Your Git User Settings
+
+```
+Bucky@Badgerloop~$: git config --global user.name "<Your name>"                                                 // Sets the name Git associates with you
+Bucky@Badgerloop~$: git config --global user.email "<The email that you used to set up your GitHub account>"    // Sets the email Git associates with you
+Bucky@Badgerloop~$: git config --global --list                                                                  // Lists your Git profile information
+user.email=bbadger@wisc.edu
+user.name=Bucky Badger
+... Maybe some other stuff if you've added other info
+```
 
 ## Step 1: Clone the Repository
 No matter what project you're working on in Badgerloop, you will always be working in a repository (Repo for short). To use git we'll be using the terminal. Check out some tutorials on the wiki. In this guide you will need to know the following.
@@ -85,32 +96,32 @@ Branches allow you to move back and forth between different "states" of a projec
 Let's create a branch by using the `git checkout` command with the `-b` flag. Let's create a branch called `{yourname}_tutorial` and confirm with the `git branch` command.
 
 ```
-Bucky@Badgerloop~$: git checkout -b Eric_tutorial
+Bucky@Badgerloop~$: git checkout -b Bucky_tutorial
 Bucky@Badgerloop~$: git branch
-* Eric_tutorial
+* Bucky_tutorial
   master
 ```
 ## Step 3: Add a new file to the Repo
 Let's add a new file to the project. For this we are going to use the `touch` command. `Touch` will create an empty file. Create a text file titled by your first name.
 ```
-Bucky@Badgerloop~$: touch Eric.txt
+Bucky@Badgerloop~$: touch Bucky.txt
 Bucky@Badgerloop~$: ls
-README.md Eric.txt
+README.md Bucky.txt
 ```
 
 After creating the new file, you can use the `git status` command to see which files git knows about.
 
 ```
 Bucky@Badgerloop~$: git status
-On branch Eric_tutorial
+On branch Bucky_tutorial
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-        Eric.txt
+        Bucky.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
-Basically, this means "Hey, we noticed you make a new file called Eric.txt but unless you use the `git add` command, we aren't going to do anything about it.
+Basically, this means "Hey, we noticed you make a new file called Bucky.txt but unless you use the `git add` command, we aren't going to do anything about it.
 
 ## Step 3.5: The Staging Enviroment
 Git works on a concept called the staging enviroment, this is one of the most confusing parts of git. Let's go through some terminology.
@@ -126,13 +137,13 @@ So, how do you tell git which files to put into a commit? This is where the stag
 ## Step 4: Add a File to the Staging Enviroment
 Add a file to the staging enviroment by using the `git add` command
 ```
-Bucky@Badgerloop~$: git add Eric.txt
+Bucky@Badgerloop~$: git add Bucky.txt
 Bucky@Badgerloop~$: git status
-On branch Eric_tutorial
+On branch Bucky_tutorial
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-        new file:   Eric.txt
+        new file:   Bucky.txt
 ```
 ## Step 5: Commit Your Changes
 It's time to create your first commit!
@@ -142,20 +153,20 @@ Run the `git commit -m "{Your commit message}` command.
 The `-m` flag means the next string will be a commit message. It is important to create meaningful commit messages so everyone knows what changes were made. It could be a new feature, fixing a bug, or even just fixing a typo. Please, please, please dont type "asdfasdfasdf" or "whatever". 
 
 ```
-Bucky@Badgerloop~$: git commit -m "Added Eric.txt to mark my contribution"
-[Eric_tutorial (root-commit) b345d9a] Added Eric.txt to mark my contribution
+Bucky@Badgerloop~$: git commit -m "Added Bucky.txt to mark my contribution"
+[Bucky_tutorial (root-commit) b345d9a] Added Bucky.txt to mark my contribution
  1 file changed, 1 insertion(+)
- create mode 100644 Eric.txt
+ create mode 100644 Bucky.txt
  ```
 
  ## Step 5.5: A Better Way
 
  When working with several files, it gets tedious to list every single file for one commit. An easier way to commit several files is to run the `git commit` command with the `-am` flag. As we learned eariler `-m` means you're adding a message to your commit. The `-a` flag means you want to commit all changed files. 
  ```
- Bucky@Badgerloop~$: git commit -am "Added Eric.txt to mark my contribution"
- [Eric_tutorial (root-commit) b345d9a] Added Eric.txt to mark my contribution
+ Bucky@Badgerloop~$: git commit -am "Added Bucky.txt to mark my contribution"
+ [Bucky_tutorial (root-commit) b345d9a] Added Bucky.txt to mark my contribution
  1 file changed, 1 insertion(+)
- create mode 100644 Eric.txt
+ create mode 100644 Bucky.txt
  ```
 
 ## Step 6: Push a branch to GitHub
@@ -165,14 +176,14 @@ Now that we are done with our change, we are ready to **push** it to GitHub. Thi
 To push changes on a new GitHub Branch we'll use the `git push origin {your branch name}` command. Origin is just an alias for the repository's url.
 
 ```
-Bucky@Badgerloop~$: git push origin Eric_tutorial
+Bucky@Badgerloop~$: git push origin Bucky_tutorial
 Counting objects: 3, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 313 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/Badgerloop-Software/github-tutorial.git
- * [new branch]      Eric_tutorial -> Eric_tutorial
+ * [new branch]      Bucky_tutorial -> Bucky_tutorial
 ```
 
 At this point it may ask you to log in with your username and password.
@@ -210,7 +221,7 @@ From https://github.com/badgerloop-software/github-tutorial
  * branch            master     -> FETCH_HEAD
    b345d9a..5381b7c  master     -> origin/master
 Merge made by the 'recursive' strategy.
- Eric.txt | 1 +
+ Bucky.txt | 1 +
  1 file changed, 1 insertion(+)
  ```
 
