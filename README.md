@@ -7,9 +7,13 @@ This Tutorial is based on the one from [hubspot](https://product.hubspot.com/blo
 
 <br/>
 
+# WSL and Ubuntu Installation and Setup
 <details>
-<summary><strong>WSL and Ubuntu Installation and Setup (Fellow Windows People Start Here if You Want a Good Time)</strong></summary>
-This portion of the tutorial is to guide new Firmware members in the installation of WSL. Requirements for this tutorial are that you are using your **personal laptop** that runs **Windows 10, Windows 11, or Linux**. Windows users, please complete WSL installation before continuing with the GitHub tutorial. If you use Linux, then you can skip ahead to the GitHub portion.
+<summary><strong>Fellow Windows People Start Here if You Want to Have a Good Time</strong></summary>
+
+<br/>
+
+This portion of the tutorial is to guide new members in the installation of Windows Subsystem for Linux, or WSL. Windows users, please complete WSL installation before continuing with the GitHub tutorial. If you use Linux/macOS, then you can skip ahead to the GitHub portion.
 
 ## Step 0: Install Windows Terminal
 I have found that Windows Terminal works best for WSL, as it combines PowerShell and your WSL distribution into one terminal. If your laptop doesn't already have it installed, you can download it [here](https://www.microsoft.com/store/productId/9N0DX20HK701).
